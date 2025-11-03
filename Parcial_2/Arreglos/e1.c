@@ -1,24 +1,15 @@
 #include <stdio.h>
 
-int n = 0, a[100], i = 0, impares = 0;
+int n = 0, a[100], i = 0, impares = 0, j = 0;
 
 int main() 
 {
-    scanf("%d", &n);
-    for(i = 0; i < n; i++)
+    for(i = 0, j = 1; i <= 100; i++, j ++)
     {
-        scanf("%d", &a[i]);
+        a[i] = j;
+        if (j % 2 == 0)
+            printf("Par : %d\n", j);
+        else 
+            impares ++;
     }
-    
-    printf("Pares: ");
-    for(i = 0; i < n; i++) 
-    {
-        if(a[i] % 2 == 0)
-            printf("%d ", a[i]);
-        else
-            impares++;
-    }
-
-    printf("\nImpares: %d\n", impares);
-    return 0;
 }
