@@ -1,0 +1,83 @@
+#include <stdio.h>
+
+// ---- Declaración de funciones (prototipos) ----
+int opcion1(int a, int b);                     // No recibe nada (solo mensaje)
+int opcion2(int a, int b);          // Recibirá enteros (operación desconocida)
+int opcion3(int a, int b);          // Igual que arriba
+int opcion4(int a, int b);          // Igual que arriba
+void opcion5();                     // Función de salir (no necesita enteros)
+
+int main() {
+    int opcion = 0;
+    int a, b, resultado;
+
+    printf("Selecciona una de las 5 opciones:\n");
+    printf("1) Mensaje\n");
+    printf("2) Opcion 2 (usa 2 enteros)\n");
+    printf("3) Opcion 3 (usa 2 enteros)\n");
+    printf("4) Opcion 4 (usa 2 enteros)\n");
+    printf("5) Salir\n");
+    scanf("%d", &opcion);
+
+    switch (opcion)
+    {
+        case 1:
+            opcion1();
+            break;
+
+        case 2:
+            printf("Ingresa dos numeros: ");
+            scanf("%d %d", &a, &b);
+            resultado = opcion2(a, b);
+            printf("Resultado opcion 2: %d\n", resultado);
+            break;
+
+        case 3:
+            printf("Ingresa dos numeros: ");
+            scanf("%d %d", &a, &b);
+            resultado = opcion3(a, b);
+            printf("Resultado opcion 3: %d\n", resultado);
+            break;
+
+        case 4:
+            printf("Ingresa dos numeros: ");
+            scanf("%d %d", &a, &b);
+            resultado = opcion4(a, b);
+            printf("Resultado opcion 4: %d\n", resultado);
+            break;
+
+        case 5:
+            opcion5();
+            break;
+
+        default:
+            printf("Opcion invalida\n");
+            break;
+    }
+
+    return 0;
+}
+
+// ---- Definiciones de funciones ----
+
+void opcion1() {
+    printf("Bienvenido al programa de funciones en C!\n");
+}
+
+// Estas funciones reciben enteros, sin importar qué operación harán.
+// Puedes cambiar la operación cuando quieras.
+int opcion2(int a, int b) {
+    return a + b;  // ejemplo (suma)
+}
+
+int opcion3(int a, int b) {
+    return a - b;  // ejemplo (resta)
+}
+
+int opcion4(int a, int b) {
+    return a * b;  // ejemplo (multiplicación)
+}
+
+void opcion5() {
+    printf("Saliendo del programa... Adios :)\n");
+}
